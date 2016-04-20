@@ -1,6 +1,5 @@
 create database hrms;
 
-
 use hrms;
 
 create table user (
