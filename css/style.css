@@ -1,0 +1,20 @@
+body{color:#555;}
+.f-login-table{background:#e0feef;padding:1% 2% 2% 2%;border-radius:4px;margin:10% auto;width:25%;}
+.f-login-table tr:first-child{line-height:30px;}
+.f-login-table tr:first-child td{text-align:center; font-size:24px; font-family: "Times New Roman", Times, serif;opacity:0.95;}
+.f-login-table tr{line-height:25px;}
+.f-login-table tr td{font-size:15px;}
+.f-login-table tr td:first-child{width:15%;}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select{margin-top:5px;border: 1px solid #dce4ec;font-size: 15px;padding-bottom: 9px;padding-top: 9px;text-indent: 3px;width: 220px;}
+.f-login-table tr select{width:225px;}
+input[type="button"],input[type="submit"]{margin-top:5px;margin-left:2%;border:none;width:100%;font-size:16.5px;display: inline-block;box-sizing: border-box;background-color:#2f96b4;height:40px;border-radius:4px;/*color:#fff;*/}
+.submit{width:3.2% !important;height:37px !important;}
+input[type="submit"]:hover{background-color:#49afcd;}
+.f-login-table tr td a{color:#555;}
+.table-border{width:47.5%;border: 1px solid #ddd;border-spacing: 0;border-collapse: collapse;}
+.table-border tr td{padding: 8px;line-height: 1.42857143;vertical-align: middle;border: 1px solid #ddd;}
+table{text-align: center;margin:2% auto;}
