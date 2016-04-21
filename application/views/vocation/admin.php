@@ -87,7 +87,6 @@ echo '你好! ' . $this->session->login_user['username'] . '(' . $this->session-
 	<td>编号</td>
 	<td>用户名</td>
 	<td>开始时间</td>
-	<td>结束时间</td>
 	<td>天数</td>
 	<td>备注</td>
 	<td>操作时间</td>
@@ -104,7 +103,6 @@ for ($i = 0; $i < count($vocations);$i++) {
 	<td><?=$i+1;?></td>
 	<td><?=$vocation['username'];?></td>
 	<td><?=$vocation['startTime'];?></td>
-	<td><?=$vocation['endTime'];?></td>
 	<td><?=$vocation['duration'];?></td>
 	<td><?=$vocation['desp'];?></td>
 	<td><?=$vocation['opTime'];?></td>
