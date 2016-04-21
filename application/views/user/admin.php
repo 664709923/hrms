@@ -109,8 +109,8 @@ echo '你好! ' . $this->session->login_user['username'] . '(' . $this->session-
 	<td>开始时间</td>
 	<td>结束时间</td>
 	<td>天数</td>
-	<td>原因</td>
-	<td>申请时间</td>
+	<td>备注</td>
+	<td>操作时间</td>
 	<td>请假类型</td>
 	<td>状态</td>
 	<td>操作</td>

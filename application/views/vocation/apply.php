@@ -21,18 +21,8 @@
           ?>" /></td>
       </tr>
       <tr>
-        <td>结束时间</td>
-        <td><input type="date" name="endTime" value="<?php
-         $end = set_value('endTime');
-         if($end != NULL)
-          {
-            echo $end;
-          }else
-          {
-            echo date('Y-m-d');
-          } 
-
-          ?>"/></td>
+        <td>请假天数</td>
+        <td><input type="text" name="duration" value="<?php set_value('duration');  ?>"/></td>
       </tr>
 
       <tr>

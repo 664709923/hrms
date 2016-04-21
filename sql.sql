@@ -21,7 +21,7 @@ create table vocation (
 	username varchar(20) not null,
 	startTime varchar(20) not null,
 	endTime varchar(20) not null,
-	duration int,
+	duration double(5,1),
 	desp varchar(100),
 	opTime varchar(50),
 	type int,
@@ -42,7 +42,7 @@ insert into status(info) values('已完成'); /*id=3*/
 create table vocation_type(
 	id int primary key auto_increment,
 	info varchar(10),
-	days int
+	days double(5,1)
 );
 
 insert into vocation_type(info, days) values('事假', 14);	/*id=1*/
@@ -60,7 +60,7 @@ create table reimburse(
 	username varchar(20) not null,
 	desp varchar(100),
 	opTime varchar(50),
-	amount int,
+	amount double(10,2),
 	type int,
 	status int    /* 1:已提交 2:已同意 3:已完成 */
 );

@@ -104,8 +104,9 @@ class Vocation extends CI_Controller{
 
         $username = $this->session->login_user['username'];
         $startTime = $this->input->post('startTime');
-        $endTime = $this->input->post('endTime');
-        $duration = ceil((strtotime($this->input->post('endTime')) - strtotime($this->input->post('startTime')))/86400) + 1;
+        //$endTime = $this->input->post('endTime');
+        //$duration = ceil((strtotime($this->input->post('endTime')) - strtotime($this->input->post('startTime')))/86400) + 1;
+        $duration = $this->input->post('duration');
         $desp = $this->input->post('desp');
         $opTime = date("Y-m-d H:i:s");
         $type = $this->input->post('type');
@@ -115,15 +116,13 @@ class Vocation extends CI_Controller{
         $flag = FALSE;
         if($type == NULL){
             $flag = TRUE;
-        }elseif($startTime == NULL){
+        }elseif($startTime == NULL)
+        {
             $data['error'] = '开始时间不能为空!';
             $flag = TRUE;
-        }elseif ($endTime == NULL) {
-            $data['error'] = '结束时间不能为空!';
-            $flag = TRUE;
-        }elseif($duration <= 0)
+        }elseif ($duration == NULL)
         {
-            $data['error'] = '开始时间不能晚于结束时间!';
+            $data['error'] = '请假时间不能为空!';
             $flag = TRUE;
         }elseif ($duration > $days[$type])
         {
@@ -142,7 +141,6 @@ class Vocation extends CI_Controller{
 			$vocation = array(
 				'username' => $username,
             	'startTime' => $startTime,
-            	'endTime' => $endTime,
                 'duration' => $duration,
             	'desp' => $desp,
             	'opTime' => $opTime,
