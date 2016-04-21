@@ -87,6 +87,7 @@ echo '你好! ' . $this->session->login_user['username'] . '(' . $this->session-
 	<td>操作时间</td>
 	<td>请假类型</td>
 	<td>状态</td>
+	<td>操作</td>
 </tr>
 
 
@@ -103,6 +104,17 @@ for ($i = 0; $i < count($vocations);$i++) {
 		<td><?=$vocation['opTime'];?></td>
 		<td><?=$vocation['type']['info'];?></td>
 		<td><?=$vocation['status']['info'];?></td>
+
+		<td>
+		<?php echo form_open('vocation/delete'); ?>
+		<input type="hidden" name="id" value="<?=$vocation['id'];?>"/>
+		<input type="hidden" name="year" value="<?=set_value('year');?>"/>
+		<input type="hidden" name="type" value="<?=set_value('type');?>"/>
+		<input type="hidden" name="status" value="<?=set_value('status');?>"/>
+		<input type="submit" value="删除" <?php if($vocation['status']['id'] > 1){echo 'disabled';} ?> onclick="return confirm('确定删除？')"/>
+
+		</form>
+		</td>
 	</tr>
 <?php
 }

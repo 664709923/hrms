@@ -19,7 +19,18 @@
 
       <tr>
         <td>日期</td>
-        <td><input type="date" name="opTime" value="<?php echo set_value('opTime'); ?>" /></td>
+        <td>
+        <input type="date" name="opTime" value="<?php
+         $op = set_value('opTime');
+         if($op != NULL)
+          {
+            echo $op;
+          }else
+          {
+            echo date('Y-m-d');
+          } 
+
+          ?>" /></td>
       </tr>
       <tr>
         <td>金额</td>

@@ -24,7 +24,7 @@ class Vocation extends CI_Controller{
     }
 
 
-    public function delete($id = NULL)
+    public function delete()
     {
         $user = $this->session->login_user;
         if($user == NULL)
@@ -32,12 +32,13 @@ class Vocation extends CI_Controller{
             redirect('user/login');
         }
         
+        $id = $this->input->post('id');
     	if($id != NULL)
     	{
     		$this->vocation_model->delete_vocation($id);
     	}
 
-    	$username = $_REQUEST['username'];
+    	$username = $user['username'];
 		$year = $_REQUEST['year'];
         $type = $_REQUEST['type'];
 		$status = $_REQUEST['status'];
@@ -45,11 +46,11 @@ class Vocation extends CI_Controller{
 		$data['vocations'] = $this->vocation_model->get_vocation($username, $year, $type, $status);
 		
 		$this->load->view('templates/header',$data);
-        $this->load->view('user/admin', $data);
+        $this->load->view('vocation/main', $data);
         $this->load->view('templates/footer');
     }
 
-    public function accept($id = NULL)
+    public function accept()
     {
         $user = $this->session->login_user;
         if($user == NULL)

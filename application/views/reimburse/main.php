@@ -85,6 +85,7 @@ echo '你好! ' . $this->session->login_user['username'] . '(' . $this->session-
 	<td>报销金额</td>
 	<td>备注</td>
 	<td>状态</td>
+	<td>操作</td>
 </tr>
 
 <?php
@@ -98,6 +99,16 @@ for ($i = 0; $i < count($reimburses);$i++) {
 		<td><?=$reimburse['amount'];?></td>
 		<td><?=$reimburse['desp'];?></td>
 		<td><?=$reimburse['status']['info'];?></td>
+		<td>
+		<?php echo form_open('reimburse/delete'); ?>
+		<input type="hidden" name="id" value="<?=$reimburse['id'];?>"/>
+		<input type="hidden" name="year" value="<?=set_value('year');?>"/>
+		<input type="hidden" name="type" value="<?=set_value('type');?>"/>
+		<input type="hidden" name="status" value="<?=set_value('status');?>"/>
+		<input type="submit" value="删除" <?php if($reimburse['status']['id'] > 1){echo 'disabled';} ?> onclick="return confirm('确定删除？')"/>
+
+		</form>
+		</td>
 	</tr>
 <?php
 }

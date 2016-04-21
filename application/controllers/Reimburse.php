@@ -24,7 +24,7 @@ class reimburse extends CI_Controller{
     }
 
 
-    public function delete($id = NULL)
+    public function delete()
     {
         $user = $this->session->login_user;
         if($user == NULL)
@@ -32,12 +32,13 @@ class reimburse extends CI_Controller{
             redirect('user/login');
         }
         
+        $id = $this->input->post('id');
     	if($id != NULL)
     	{
     		$this->reimburse_model->delete_reimburse($id);
     	}
 
-    	$username = $_REQUEST['username'];
+    	$username = $user['username'];
 		$year = $_REQUEST['year'];
         $type = $_REQUEST['type'];
 		$status = $_REQUEST['status'];
@@ -45,11 +46,11 @@ class reimburse extends CI_Controller{
 		$data['reimburses'] = $this->reimburse_model->get_reimburse($username, $year, $type, $status);
 		
 		$this->load->view('templates/header',$data);
-        $this->load->view('user/admin', $data);
+        $this->load->view('reimburse/main', $data);
         $this->load->view('templates/footer');
     }
 
-    public function accept($id = NULL)
+    public function accept()
     {
         $user = $this->session->login_user;
         if($user == NULL)
@@ -88,7 +89,7 @@ class reimburse extends CI_Controller{
 
         $worknumber = $this->session->login_user['worknumber'];
         $username = $this->session->login_user['username'];
-	$desp = $this->input->post('desp');
+	    $desp = $this->input->post('desp');
         $opTime = $this->input->post('opTime');
         $amount = $this->input->post('amount');
         $type = $this->input->post('type');
