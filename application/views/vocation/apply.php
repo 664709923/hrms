@@ -51,7 +51,7 @@
       </tr>
 
       <tr>
-        <td>描述</td>
+        <td>备注</td>
         <td>
         <input type="text" name="desp" value="<?php echo set_value('desp'); ?>"/>
         </td>
